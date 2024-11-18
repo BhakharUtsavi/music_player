@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+
+class Task9 extends StatefulWidget {
+  const Task9({super.key});
+
+  @override
+  State<Task9> createState() => _Task9State();
+}
+
+class _Task9State extends State<Task9> {
+
+  late TabController _tabController;
+
+  // Bottom Navigation Bar Index
+  int _currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
+  }
+
+  // Method to switch TabBar based on BottomNavigationBar
+  void _onBottomNavItemTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+    // Reset the TabBar when switching to another BottomNav item
+    _tabController.index = 0;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
